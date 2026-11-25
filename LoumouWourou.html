@@ -4,12 +4,20 @@
     <meta charset="utf-8">
     <name="viewport" content="width= devices-width, initial scare =1">
     <title>Loumou Wourou</title>
+    <link rel="icon" type="image/jpeg" href="LW logo.jpg">
+    <link rel= "stylesheet" href="style.css">
 </head>
 <body>
-<header>   
+<header class="navbar">
+    <div class="container">
+        <a href="LoumouWourou.html" class="logo-link">
+            <img src="LW logo.jpg" alt="Logo de Loumou Wourou" class="logo-img">
+            <span>Loumou<strong>Wourou</strong></span>
+        </a>
+    </div>   
     <h1>Boutique en ligne</h1>
-    <nav aria-label="Acceuil">
-        <ul>
+    <nav class="navbar">
+        <ul class="nav-links">
             <li><a href="acceuil.html">Acceuil</a></li>
             <li><a href="Catalogue.html">Catalogue</a></li>
             <li><a href="Commercant .html">Commercant</a></li>
@@ -19,7 +27,7 @@
     </nav>
 </header>
 <main id="Boutique">
-     <form action="/conctact" method="submit">
+     <form action="/conctact" method="submit" class="btn">
         <label for="email">Adresse électronique :</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="example@gmail.com">
         <p><label for="Conctact">Numero de téléphone :</label> <input id="num" name="num" type="number" required placeholder="+237-622-203-234"></p>
         <p><label for="Message"> Message</label><input id="message" name="message" type="search" required placeholder="Entrez votre message."></p>

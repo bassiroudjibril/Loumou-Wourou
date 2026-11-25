@@ -1,0 +1,306 @@
+/* =========================================
+   1. VARIABLES & CONFIGURATION GLOBALE
+   ========================================= */
+:root {
+  --primary-color: #2d6a4f;      /* Vert forêt (Agriculture / Nature) */
+  --primary-dark: #1b4332;       /* Vert foncé au survol */
+  --secondary-color: #d97706;    /* Ocre / Ambre (Terre / Récolte) */
+  --bg-light: #f8f9fa;           /* Fond principal clair */
+  --bg-card: #ffffff;            /* Fond des cartes produits */
+  --text-main: #1f2937;          /* Texte principal */
+  --text-muted: #6b7280;         /* Texte secondaire */
+  --border-color: #e5e7eb;       /* Bordures légères */
+  --radius: 10px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  --transition: all 0.25s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  line-height: 1.6;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+              url("LW background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================
+   2. EN-TÊTE & NAVIGATION
+   ========================================= */
+.navbar {
+  background-color: var(--bg-card);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--secondary-color);
+}
+.logo-link{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+
+.logo-link strong{
+  color: var(--secondary-color);
+}
+
+.logo-img{
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+}
+.nav-links {
+  background-color: var(--bg-card);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  z-index: 100;
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* =========================================
+   3. BOUTONS
+   ========================================= */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+/* =========================================
+   4. SECTION HERO (BANNIÈRE)
+   ========================================= */
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+  color: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 0 auto 25px;
+  opacity: 0.9;
+}
+
+/* Barre de recherche */
+.search-bar {
+  display: flex;
+  max-width: 550px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: var(--radius);
+  padding: 5px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  padding: 12px 15px;
+  font-size: 1rem;
+  outline: none;
+  border-radius: var(--radius);
+}
+
+/* =========================================
+   5. GRILLE DU CATALOGUE PRODUITS
+   ========================================= */
+.section-title {
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+  color: var(--primary-dark);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.product-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #e5e7eb;
+}
+
+.product-info {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 6px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.product-seller {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.product-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.product-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+/* =========================================
+   6. PIED DE PAGE (FOOTER)
+   ========================================= */
+.footer {
+  background-color: var(--primary-dark);
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* =========================================
+   7. RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .nav-links {
+    display: none; /* À remplacer par un menu burger si besoin */
+  }
+
+  .search-bar {
+    flex-direction: column;
+    background: transparent;
+    gap: 10px;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+}
