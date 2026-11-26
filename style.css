@@ -2,8 +2,8 @@
    1. VARIABLES & CONFIGURATION GLOBALE
    ========================================= */
 :root {
-  --primary-color: #2d6a4f;      /* Vert forêt (Agriculture / Nature) */
-  --primary-dark: #1b4332;       /* Vert foncé au survol */
+  --primary-color: #47735c;      /* Vert sauge */
+  --primary-dark: #355b4b;       /* Vert sauge foncé */
   --secondary-color: #d97706;    /* Ocre / Ambre (Terre / Récolte) */
   --bg-light: #f8f9fa;           /* Fond principal clair */
   --bg-card: #ffffff;            /* Fond des cartes produits */
@@ -22,6 +22,8 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: #ffffff;
   line-height: 1.6;
@@ -29,6 +31,10 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
               url("LW background.jpg") no-repeat center center fixed;
   background-size: cover;
+}
+
+main {
+  flex: 1;
 }
 
 .container {
@@ -273,13 +279,21 @@ body {
   background-color: var(--primary-dark);
   color: #ffffff;
   text-align: center;
-  padding: 30px 20px;
+  padding: 20px;
   margin-top: 40px;
 }
 
 .footer p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   opacity: 0.85;
+}
+
+.footer a {
+  color: #ffffff;
+}
+
+.footer a:hover {
+  color: var(--secondary-color);
 }
 
 /* =========================================
